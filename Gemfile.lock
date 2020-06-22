@@ -205,7 +205,10 @@ DEPENDENCIES
   axlsx (= 2.1.0.pre)
   axlsx_rails
   bcrypt
+<<<<<<< HEAD
   bigdecimal (= 1.4.2)
+=======
+>>>>>>> 8c611fc577dd332fe52b6ced25efae101da097a5
   bootstrap-sass
   bootstrap-will_paginate
   byebug

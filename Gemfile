@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
+<<<<<<< HEAD
 gem 'bigdecimal', '1.4.2'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

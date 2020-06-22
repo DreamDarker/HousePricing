@@ -131,8 +131,20 @@ ActiveRecord::Schema.define(version: 20161027095326) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "users" because of following FrozenError
-#   can't modify frozen String: "false"
+
+
+=======
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+>>>>>>> 8c611fc577dd332fe52b6ced25efae101da097a5
 
   create_table "works", force: :cascade do |t|
     t.string   "name"
