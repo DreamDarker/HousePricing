@@ -133,7 +133,6 @@ ActiveRecord::Schema.define(version: 20161027095326) do
 
 
 
-=======
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -144,7 +143,7 @@ ActiveRecord::Schema.define(version: 20161027095326) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
->>>>>>> 8c611fc577dd332fe52b6ced25efae101da097a5
+
 
   create_table "works", force: :cascade do |t|
     t.string   "name"

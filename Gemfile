@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
 gem 'bigdecimal', '1.4.2'
 
 

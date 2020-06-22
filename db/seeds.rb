@@ -16,10 +16,8 @@ file.gsub(/\{(.*?)\}/).each do |line|
   house.average_price=hash['average_price'][0].scan(/[0-9]/).join.to_i
   house.floor=hash['floor'][0]
   house.build_time=hash['build_time'][0].scan(/[0-9]/).join
-<<<<<<< HEAD
   house.community=hash['location'][0].delete(' ').scan(/\n(.*)/)[0].join.gsub("\u00A0", "")
   house.street=hash['location'][0].delete(' ').scan(/\n(.*)/)[0].join
-=======
 
   house.room_shape=hash['room_shape'][0]
   house.save
