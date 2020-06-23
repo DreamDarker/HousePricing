@@ -91,7 +91,14 @@
 
     // 两个数组的顺序不能错
     var keywords_en = ["bus", "shop", "school", "subway", "work", "hospital"];
-    var keywords = ["公交车站", "商场", "学校", "地铁站", "写字楼", "医院"];
+    var keywords = ["公交车站", "超市", "学校", "地铁站", "写字楼", "医院"];
+    var dic = new Array();
+    dic["公交车站"] = "bus";
+    dic["超市"] = "shop";
+    dic["学校"] = "school";
+    dic["地铁站"] = "subway";
+    dic["写字楼"] = "work";
+    dic["医院"] = "hospital";
 
     var map = new BMap.Map("l-map");
     // 初始化map坐标为北京,11为比例尺
@@ -199,7 +206,7 @@
                         }
                     }
                     // 获得百度地图查询结果后立即发送给服务器
-                    return sendData(keywords_en[keyword_idx], nearby_info, house_data, house_loc, keyword_idx)
+                    return sendData(keywords[keyword_idx], nearby_info, house_data, house_loc, keyword_idx)
                 } else {
                     GetDataFromServer();
                     console.log("No records with baiduAPI:", local.getStatus());
@@ -211,7 +218,7 @@
     }
 
     function sendData(nearby_type, nearby_info, house_data, house_loc, idx) {
-        data = "nearby_type=" + nearby_type + "&nearby_info=" + nearby_info + "&id=" + house_data.id + "&lat=" + house_loc.lat + "&lng=" + house_loc.lng;
+        data = "nearby_type=" + dic[nearby_type] + "&nearby_info=" + nearby_info + "&id=" + house_data.id + "&lat=" + house_loc.lat + "&lng=" + house_loc.lng;
         $.ajax({
             type: "POST",
             url: post_data_url,

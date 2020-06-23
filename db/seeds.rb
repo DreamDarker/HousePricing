@@ -29,8 +29,4 @@ User.create(
     password: "password",
     password_confirmation: "password",
     admin: true
-<<<<<<< HEAD
 )
-=======
-)
->>>>>>> 8c611fc577dd332fe52b6ced25efae101da097a5

@@ -40,12 +40,12 @@ class SpidersController < ApplicationController
     house.longitude=params[:lng]
     house.save
 
-    insert(house, params, Bus, BusesHouses, 'bus') if params[:nearby_type] == 'bus'
-    insert(house, params, Hospital, HospitalsHouses, 'hospital') if params[:nearby_type] == 'hospital'
-    insert(house, params, Work, WorksHouses, 'work') if params[:nearby_type] == 'work'
-    insert(house, params, School, SchoolsHouses, 'school') if params[:nearby_type] == 'school'
-    insert(house, params, Subway, SubwaysHouses, 'subway') if params[:nearby_type] == 'subway'
-    insert(house, params, Bus, ShopsHouses, 'shop') if params[:nearby_type] == 'shop'
+    insert(house, params, Bus, BusesHouses, "bus") if params[:nearby_type] == "bus"
+    insert(house, params, Hospital, HospitalsHouses, "hospital") if params[:nearby_type] == "hospital"
+    insert(house, params, Work, WorksHouses, "work") if params[:nearby_type] == "work"
+    insert(house, params, School, SchoolsHouses, "school") if params[:nearby_type] == "school"
+    insert(house, params, Subway, SubwaysHouses, "subway") if params[:nearby_type] == "subway"
+    insert(house, params, Shop, ShopsHouses, "shop") if params[:nearby_type] == "shop"
 
     render json: params.as_json
   end
