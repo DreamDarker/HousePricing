@@ -18,7 +18,6 @@ file.gsub(/\{(.*?)\}/).each do |line|
   house.build_time=hash['build_time'][0].scan(/[0-9]/).join
   house.community=hash['location'][0].delete(' ').scan(/\n(.*)/)[0].join.gsub("\u00A0", "")
   house.street=hash['location'][0].delete(' ').scan(/\n(.*)/)[0].join
-
   house.room_shape=hash['room_shape'][0]
   house.save
 end
