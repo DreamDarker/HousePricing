@@ -4,19 +4,31 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   host: <%= ENV['PG_HOST'] || 'localhost' %>
+#   port: <%= ENV['PG_PORT'] || '5432' %>
+#   username: <%= ENV['PG_USER'] || 'postgres' %>
+#   password: <%= ENV['PG_PASSWORD'] || 'postgres' %>
+#   pool: 5
+#   timeout: 5000
+
+
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  host: <%= ENV['PG_HOST'] || 'localhost' %>
-  port: <%= ENV['PG_PORT'] || '5432' %>
-  username: <%= ENV['PG_USER'] || 'postgres' %>
-  password: <%= ENV['PG_PASSWORD'] || 'postgres' %>
+  adapter: mysql2
+  encoding: utf8mb4
+  database: housepricing_develop
+  host: 127.0.0.1
+  username: dre4m
+  password: 20171758
   pool: 5
   timeout: 5000
 
+
 development:
   <<: *default
-  database: <%= ENV['PG_DATABASE'] || 'housepricing_development' %>
+  database: housepricing_develop
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
