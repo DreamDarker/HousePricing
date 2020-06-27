@@ -28,12 +28,27 @@
 
 **项目使用:**
 1. 安装 rails on ruby 框架
-2. 安装 postgresql 数据库&nbsp;~~(考虑切换为Mysql)~~,请在数据库中建立housepricing_develop数据库
-    `CREATE DATABASE housepricing_develop`
-3. 在项目文件夹下
-`bundle install`
-4. `rake db:migrate`&nbsp;*// 构建数据库表单*
-   `rake db:seed`&nbsp;&nbsp;&nbsp;&nbsp;*// 写入houstdata.json到数据库*
-5. 启动
-`rails server`
+
+2. 安装 mysql 数据库
+    + 第一次使用 mysql 请 `gem install mysql2`
+    + 更改 mysql 数据库字符编码为 `utf8mb4`(请参阅网络教程/博客)
+    + 在数据库中建立housepricing_develop数据库
+    `CREATE DATABASE housepricing_develop`    
+
+3. 在项目文件夹目录下
+    `bundle install`
+
+4. 编辑 */config/database.yml* 文件 *(暂未知是否root用户存在权限问题，可进行测试，如无法连接，请创建新用户并授权)*
+
+    ```
+    default: &default
+        username: [your username]
+        password: [your password]
+    ```
+
+5.  `rake db:migrate`&nbsp;*// 构建数据库表单*
+    `rake db:seed`&nbsp;&nbsp;&nbsp;&nbsp;*// 写入housetdata.json到数据库*
+
+6. 启动
+    `rails server`
 到浏览器输入`localhost:3000`即可进入

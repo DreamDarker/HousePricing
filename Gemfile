@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'bigdecimal', '1.4.2'
-
-# gem 'mysql2'
+gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
+gem 'mysql2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.11.1'
@@ -40,7 +40,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'pg', '~> 0.15'
+# gem 'pg', '~> 0.15'
+# gem 'pg', '~> 1.2.3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
